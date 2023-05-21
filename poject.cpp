@@ -270,25 +270,43 @@ void bus(int x, int y)
 
 void trees(int x, int y)
 {
+    int countTree;
+    int t1 = x;
+    for (countTree = 1; countTree <= 16; countTree++)
+    {
 
-    glBegin(GL_POLYGON);
-    glColor3ub(60, 16, 16);
-    glVertex2d(x + 100, y + 225);
-    glVertex2d(x + 103, y + 225);
-    glVertex2d(x + 103, y + 210);
-    glVertex2d(x + 100, y + 210);
-    glEnd();
+        glBegin(GL_POLYGON);
+        glColor3ub(60, 16, 16);
+        glVertex2d(x + 100, y + 225);
+        glVertex2d(x + 103, y + 225);
+        glVertex2d(x + 103, y + 210);
+        glVertex2d(x + 100, y + 210);
+        glEnd();
 
-    circle(x + 98, y + 225, 5, 26, 50, 0);
-    circle(x + 102, y + 225, 5, 26, 50, 0);
-    circle(x + 107, y + 230, 5, 26, 45, 0);
-    circle(x + 100, y + 232, 5, 26, 50, 0);
+        circle(x + 98, y + 225, 5, 26, 50, 0);
+        circle(x + 102, y + 225, 5, 26, 50, 0);
+        circle(x + 107, y + 230, 5, 26, 45, 0);
+        circle(x + 100, y + 232, 5, 26, 50, 0);
+        x = t1 + 25;
+        t1 = x;
+    }
 }
 
 void display()
 {
 
     glClear(GL_COLOR_BUFFER_BIT);
+
+    glBegin(GL_QUADS);
+    glColor3ub(221, 236, 243);
+    glVertex2d(0, 250);
+    glVertex2f(500, 250);
+
+    glColor3ub(121, 192, 216);
+    glVertex2f(500, 500);
+
+    glVertex2f(0, 500);
+    glEnd();
 
     //--------------------------------------field-----------------------
     glColor3ub(43, 120, 33);
@@ -347,328 +365,829 @@ void display()
 
     //---------------------------------- CRICKET FIELD END-------------------------------------
 
-    // tree();
-
     // --------------------------------------building left side start -------------------------------
-    glColor3ub(111, 119, 230);
+
+    //---------------------------------------BUILDING FRONT ROAD------------------------------------
+    glColor3ub(255, 221, 204);
     glBegin(GL_POLYGON);
-    glVertex2d(0, 500);
-    glVertex2d(1500, 500);
-    glVertex2d(1500, 250);
     glVertex2d(0, 250);
+    glVertex2d(1500, 250);
+    glVertex2d(1500, 220);
+    glVertex2d(0, 220);
     glEnd();
 
-    glColor3ub(140, 140, 140);
+    //---------------------------------------BUILDING SIDE ROAD------------------------------------
+
+    glColor3ub(255, 221, 204);
     glBegin(GL_POLYGON);
-    glVertex2d(0, 270);
-    glVertex2d(1500, 270);
-    glVertex2d(1500, 250);
-    glVertex2d(0, 250);
+    glVertex2d(65, 225);
+    glVertex2d(80, 220);
+    glVertex2d(-22, 0);
+    glVertex2d(-40, 0);
     glEnd();
 
     glColor3ub(231, 240, 230);
     glBegin(GL_POLYGON);
-    glVertex2d(90, 370);
-    glVertex2d(140, 370);
-    glVertex2d(140, 275);
-    glVertex2d(90, 275);
+    glVertex2d(90, 350);
+    glVertex2d(140, 350);
+    glVertex2d(140, 255);
+    glVertex2d(90, 255);
     glEnd();
 
     //----------------3rd flor-----------
-    glColor3ub(111, 119, 45);
+    glColor3ub(17, 51, 0);
     glBegin(GL_POLYGON);
-    glVertex2d(90, 360);
-    glVertex2d(125, 360);
-    glVertex2d(125, 330);
-    glVertex2d(90, 330);
+    glVertex2d(90, 340);
+    glVertex2d(125, 340);
+    glVertex2d(125, 310);
+    glVertex2d(90, 310);
     glEnd();
 
-    glColor3ub(111, 119, 45);
     glBegin(GL_POLYGON);
-    glVertex2d(126, 360);
-    glVertex2d(139, 360);
-    glVertex2d(139, 330);
-    glVertex2d(126, 330);
+    glVertex2d(126, 340);
+    glVertex2d(139, 340);
+    glVertex2d(139, 310);
+    glVertex2d(126, 310);
+    glEnd();
+
+    ///---------------------------------------------
+    glColor3ub(255, 255, 255);
+
+    glBegin(GL_POLYGON);
+    glVertex2d(128, 335);
+    glVertex2d(129, 335);
+    glVertex2d(129, 315);
+    glVertex2d(128, 315);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(130, 335);
+    glVertex2d(131, 335);
+    glVertex2d(131, 315);
+    glVertex2d(130, 315);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(132, 335);
+    glVertex2d(133, 335);
+    glVertex2d(133, 315);
+    glVertex2d(132, 315);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(134, 335);
+    glVertex2d(135, 335);
+    glVertex2d(135, 315);
+    glVertex2d(134, 315);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(136, 335);
+    glVertex2d(137, 335);
+    glVertex2d(137, 315);
+    glVertex2d(136, 315);
+    glEnd();
+
+    //---------------------------------------------------------------
+
+    //--------------------------------------LEFT SIDE VIEW
+    glColor3ub(166, 166, 166);
+    glBegin(GL_POLYGON);
+    glVertex2d(140, 350);
+    glVertex2d(150, 345);
+    glVertex2d(150, 260);
+    glVertex2d(140, 255);
+    glEnd();
+
+    glColor3ub(17, 51, 0);
+    glBegin(GL_POLYGON);
+    glVertex2d(141, 340);
+    glVertex2d(149, 338);
+    glVertex2d(149, 315);
+    glVertex2d(141, 310);
+    glEnd();
+
+    //----------------------------------2nd flor--------------
+    glColor3ub(17, 51, 0);
+    glBegin(GL_POLYGON);
+    glVertex2d(90, 308);
+    glVertex2d(125, 308);
+    glVertex2d(125, 280);
+    glVertex2d(90, 280);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(126, 308);
+    glVertex2d(139, 308);
+    glVertex2d(139, 280);
+    glVertex2d(126, 280);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(141, 307);
+    glVertex2d(149, 312);
+    glVertex2d(149, 286);
+    glVertex2d(141, 280);
+    glEnd();
+
+    ///---------------------------------------------
+    glColor3ub(255, 255, 255);
+
+    glBegin(GL_POLYGON);
+    glVertex2d(128, 303);
+    glVertex2d(129, 303);
+    glVertex2d(129, 285);
+    glVertex2d(128, 285);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(130, 303);
+    glVertex2d(131, 303);
+    glVertex2d(131, 285);
+    glVertex2d(130, 285);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(132, 303);
+    glVertex2d(133, 303);
+    glVertex2d(133, 285);
+    glVertex2d(132, 285);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(134, 303);
+    glVertex2d(135, 303);
+    glVertex2d(135, 285);
+    glVertex2d(134, 285);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(136, 303);
+    glVertex2d(137, 303);
+    glVertex2d(137, 285);
+    glVertex2d(136, 285);
+    glEnd();
+
+    //---------------------------------------------------------------
+
+    //----------------------------------1st flor--------------
+    glColor3ub(17, 51, 0);
+    glBegin(GL_POLYGON);
+    glVertex2d(90, 278);
+    glVertex2d(125, 278);
+    glVertex2d(125, 258);
+    glVertex2d(90, 258);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(126, 278);
+    glVertex2d(139, 278);
+    glVertex2d(139, 258);
+    glVertex2d(126, 258);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(141, 277);
+    glVertex2d(149, 283);
+    glVertex2d(149, 262);
+    glVertex2d(141, 258);
+    glEnd();
+
+    ///---------------------------------------------
+    glColor3ub(255, 255, 255);
+
+    glBegin(GL_POLYGON);
+    glVertex2d(128, 275);
+    glVertex2d(129, 275);
+    glVertex2d(129, 262);
+    glVertex2d(128, 262);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(130, 275);
+    glVertex2d(131, 275);
+    glVertex2d(131, 262);
+    glVertex2d(130, 262);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(132, 275);
+    glVertex2d(133, 275);
+    glVertex2d(133, 262);
+    glVertex2d(132, 262);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(134, 275);
+    glVertex2d(135, 275);
+    glVertex2d(135, 262);
+    glVertex2d(134, 262);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(136, 275);
+    glVertex2d(137, 275);
+    glVertex2d(137, 262);
+    glVertex2d(136, 262);
+    glEnd();
+
+    //---------------------------------------------------------------
+
+    //---------------------------main body left side -----------------------------------------------
+    glColor3ub(240, 240, 240);
+    glBegin(GL_POLYGON);
+    glVertex2d(150, 345);
+    glVertex2d(300, 345);
+    glVertex2d(300, 260);
+    glVertex2d(150, 260);
+    glEnd();
+
+    glColor3ub(17, 51, 0);
+    glBegin(GL_POLYGON);
+    glVertex2d(150, 338);
+    glVertex2d(169, 338);
+    glVertex2d(169, 314);
+    glVertex2d(150, 314);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(150, 312);
+    glVertex2d(169, 312);
+    glVertex2d(169, 286);
+    glVertex2d(150, 286);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(150, 284);
+    glVertex2d(169, 284);
+    glVertex2d(169, 262);
+    glVertex2d(150, 262);
+    glEnd();
+
+    ///--------------------------------------
+    glColor3ub(17, 51, 0);
+    glBegin(GL_POLYGON);
+    glVertex2d(170, 338);
+    glVertex2d(189, 338);
+    glVertex2d(189, 314);
+    glVertex2d(170, 314);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(170, 312);
+    glVertex2d(189, 312);
+    glVertex2d(189, 286);
+    glVertex2d(170, 286);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(170, 284);
+    glVertex2d(189, 284);
+    glVertex2d(189, 262);
+    glVertex2d(170, 262);
+    glEnd();
+
+    ////-----------main body right side-------------------------------
+
+    glBegin(GL_POLYGON);
+    glVertex2d(260, 338);
+    glVertex2d(279, 338);
+    glVertex2d(279, 314);
+    glVertex2d(260, 314);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(260, 312);
+    glVertex2d(279, 312);
+    glVertex2d(279, 286);
+    glVertex2d(260, 286);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(260, 284);
+    glVertex2d(279, 284);
+    glVertex2d(279, 262);
+    glVertex2d(260, 262);
+    glEnd();
+
+    ///--------------------------------------
+
+    glBegin(GL_POLYGON);
+    glVertex2d(280, 338);
+    glVertex2d(299, 338);
+    glVertex2d(299, 314);
+    glVertex2d(280, 314);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(280, 312);
+    glVertex2d(299, 312);
+    glVertex2d(299, 286);
+    glVertex2d(280, 286);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(280, 284);
+    glVertex2d(299, 284);
+    glVertex2d(299, 262);
+    glVertex2d(280, 262);
+    glEnd();
+
+    //----------------main body middle part------------------------------------------------
+    glColor3ub(38, 153, 0);
+    glBegin(GL_POLYGON);
+    glVertex2d(190, 338);
+    glVertex2d(259, 338);
+    glVertex2d(259, 262);
+    glVertex2d(190, 262);
+    glEnd();
+
+    glColor3ub(17, 51, 0);
+    glBegin(GL_POLYGON);
+    glVertex2d(192, 336);
+    glVertex2d(202, 336);
+    glVertex2d(202, 314);
+    glVertex2d(192, 314);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(204, 336);
+    glVertex2d(216, 336);
+    glVertex2d(216, 314);
+    glVertex2d(204, 314);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(218, 336);
+    glVertex2d(232, 336);
+    glVertex2d(232, 314);
+    glVertex2d(218, 314);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(234, 336);
+    glVertex2d(244, 336);
+    glVertex2d(244, 314);
+    glVertex2d(234, 314);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(236, 336);
+    glVertex2d(244, 336);
+    glVertex2d(244, 314);
+    glVertex2d(236, 314);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(247, 336);
+    glVertex2d(257, 336);
+    glVertex2d(257, 314);
+    glVertex2d(247, 314);
+    glEnd();
+
+    //-----------------------------------
+
+    glBegin(GL_POLYGON);
+    glVertex2d(192, 312);
+    glVertex2d(202, 312);
+    glVertex2d(202, 290);
+    glVertex2d(192, 290);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(204, 312);
+    glVertex2d(224, 312);
+    glVertex2d(224, 290);
+    glVertex2d(204, 290);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(226, 312);
+    glVertex2d(244, 312);
+    glVertex2d(244, 290);
+    glVertex2d(226, 290);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(247, 312);
+    glVertex2d(257, 312);
+    glVertex2d(257, 290);
+    glVertex2d(247, 290);
+    glEnd();
+
+    //---------------------------------------
+    glColor3ub(17, 51, 0);
+    glBegin(GL_POLYGON);
+    glVertex2d(192, 288);
+    glVertex2d(202, 288);
+    glVertex2d(202, 266);
+    glVertex2d(192, 266);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(204, 288);
+    glVertex2d(216, 288);
+    glVertex2d(216, 266);
+    glVertex2d(204, 266);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(218, 288);
+    glVertex2d(232, 288);
+    glVertex2d(232, 266);
+    glVertex2d(218, 266);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(234, 288);
+    glVertex2d(244, 288);
+    glVertex2d(244, 266);
+    glVertex2d(234, 266);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(236, 288);
+    glVertex2d(244, 288);
+    glVertex2d(244, 266);
+    glVertex2d(236, 266);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(247, 288);
+    glVertex2d(257, 288);
+    glVertex2d(257, 266);
+    glVertex2d(247, 266);
+    glEnd();
+
+    //-----------------------------------BUILDING RIGHT SIDE VIEW------------------------------------------
+
+    glColor3ub(166, 166, 166);
+    glBegin(GL_POLYGON);
+    glVertex2d(300, 345);
+    glVertex2d(310, 350);
+    glVertex2d(310, 255);
+    glVertex2d(300, 260);
+    glEnd();
+
+    glColor3ub(17, 51, 0);
+    glBegin(GL_POLYGON);
+    glVertex2d(300, 338);
+    glVertex2d(309, 343);
+    glVertex2d(309, 310);
+    glVertex2d(300, 312);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(300, 310);
+    glVertex2d(309, 308);
+    glVertex2d(309, 283);
+    glVertex2d(300, 285);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(300, 283);
+    glVertex2d(309, 279);
+    glVertex2d(309, 258);
+    glVertex2d(300, 262);
+    glEnd();
+
+    //-------------------BUILDING RIGHT -----------------------------
+
+    glColor3ub(231, 240, 230);
+    glBegin(GL_POLYGON);
+    glVertex2d(310, 350);
+    glVertex2d(360, 350);
+    glVertex2d(360, 255);
+    glVertex2d(310, 255);
+    glEnd();
+
+    //----------------3rd flor-----------
+
+    glColor3ub(17, 51, 0);
+    glBegin(GL_POLYGON);
+    glVertex2d(311, 343);
+    glVertex2d(326, 343);
+    glVertex2d(326, 310);
+    glVertex2d(311, 310);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(327, 343);
+    glVertex2d(360, 343);
+    glVertex2d(360, 310);
+    glVertex2d(327, 310);
+    glEnd();
+
+    //-----------------------------------------------------------------------------------
+    //------------------------------------
+    glColor3ub(255, 255, 255);
+
+    glBegin(GL_POLYGON);
+    glVertex2d(313, 339);
+    glVertex2d(314, 339);
+    glVertex2d(314, 315);
+    glVertex2d(313, 315);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(315, 339);
+    glVertex2d(316, 339);
+    glVertex2d(316, 315);
+    glVertex2d(315, 315);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(317, 339);
+    glVertex2d(318, 339);
+    glVertex2d(318, 315);
+    glVertex2d(317, 315);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(319, 339);
+    glVertex2d(320, 339);
+    glVertex2d(320, 315);
+    glVertex2d(319, 315);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(321, 339);
+    glVertex2d(322, 339);
+    glVertex2d(322, 315);
+    glVertex2d(321, 315);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(323, 339);
+    glVertex2d(324, 339);
+    glVertex2d(324, 315);
+    glVertex2d(323, 315);
+    glEnd();
+
+    // ----------------------------------2ND FLOR -----------------------------------
+
+    glColor3ub(17, 51, 0);
+    glBegin(GL_POLYGON);
+    glVertex2d(311, 309);
+    glVertex2d(326, 309);
+    glVertex2d(326, 280);
+    glVertex2d(311, 280);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(327, 309);
+    glVertex2d(360, 309);
+    glVertex2d(360, 280);
+    glVertex2d(327, 280);
+    glEnd();
+
+    //-----------------------------------------------------------------------------------
+    //------------------------------------
+    glColor3ub(255, 255, 255);
+
+    glBegin(GL_POLYGON);
+    glVertex2d(313, 306);
+    glVertex2d(314, 306);
+    glVertex2d(314, 283);
+    glVertex2d(313, 283);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(315, 306);
+    glVertex2d(316, 306);
+    glVertex2d(316, 283);
+    glVertex2d(315, 283);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(317, 306);
+    glVertex2d(318, 306);
+    glVertex2d(318, 283);
+    glVertex2d(317, 283);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(319, 306);
+    glVertex2d(320, 306);
+    glVertex2d(320, 283);
+    glVertex2d(319, 283);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(321, 306);
+    glVertex2d(322, 306);
+    glVertex2d(322, 283);
+    glVertex2d(321, 283);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(323, 306);
+    glVertex2d(324, 306);
+    glVertex2d(324, 283);
+    glVertex2d(323, 283);
+    glEnd();
+
+    //------------------------------------1ST FLOR-----------------------
+    glColor3ub(17, 51, 0);
+    glBegin(GL_POLYGON);
+    glVertex2d(311, 278);
+    glVertex2d(326, 278);
+    glVertex2d(326, 256);
+    glVertex2d(311, 256);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(327, 278);
+    glVertex2d(360, 278);
+    glVertex2d(360, 256);
+    glVertex2d(327, 256);
+    glEnd();
+
+    //------------------------------------
+    glColor3ub(255, 255, 255);
+
+    glBegin(GL_POLYGON);
+    glVertex2d(313, 275);
+    glVertex2d(314, 275);
+    glVertex2d(314, 262);
+    glVertex2d(313, 262);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(315, 275);
+    glVertex2d(316, 275);
+    glVertex2d(316, 262);
+    glVertex2d(315, 262);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(317, 275);
+    glVertex2d(318, 275);
+    glVertex2d(318, 262);
+    glVertex2d(317, 262);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(319, 275);
+    glVertex2d(320, 275);
+    glVertex2d(320, 262);
+    glVertex2d(319, 262);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(321, 275);
+    glVertex2d(322, 275);
+    glVertex2d(322, 262);
+    glVertex2d(321, 262);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2d(323, 275);
+    glVertex2d(324, 275);
+    glVertex2d(324, 262);
+    glVertex2d(323, 262);
+    glEnd();
+
+    //--------------------------------BUILDING FRONT GATE ------------------------------------
+
+    glColor3ub(113, 112, 93);
+
+    glBegin(GL_POLYGON);
+    glVertex2d(80, 260);
+    glVertex2d(220, 260);
+    glVertex2d(220, 250);
+    glVertex2d(80, 250);
+    glEnd();
+
+    glColor3ub(225, 217, 208);
+    glBegin(GL_POLYGON);
+    glVertex2d(220, 280);
+    glVertex2d(240, 280);
+    glVertex2d(240, 250);
+    glVertex2d(220, 250);
+    glEnd();
+
+    glColor3ub(0, 0, 0);
+    glBegin(GL_POLYGON);
+    glVertex2d(222, 278);
+    glVertex2d(238, 278);
+    glVertex2d(238, 272);
+    glVertex2d(222, 272);
     glEnd();
 
     glColor3ub(255, 255, 255);
     glBegin(GL_POLYGON);
-    glVertex2d(140, 370);
-    glVertex2d(150, 365);
-    glVertex2d(150, 280);
-    glVertex2d(140, 275);
+    glVertex2d(226, 278);
+    glVertex2d(234, 278);
+    glVertex2d(234, 274);
+    glVertex2d(226, 274);
     glEnd();
 
-    glColor3ub(111, 119, 45);
+    glColor3ub(255, 255, 255);
     glBegin(GL_POLYGON);
-    glVertex2d(141, 360);
-    glVertex2d(149, 358);
-    glVertex2d(149, 335);
-    glVertex2d(141, 330);
+    glVertex2d(226, 270);
+    glVertex2d(234, 270);
+    glVertex2d(234, 252);
+    glVertex2d(226, 252);
     glEnd();
 
-    //----------------------------------2nd flor--------------
-    glColor3ub(111, 119, 45);
+    glColor3ub(113, 112, 93);
     glBegin(GL_POLYGON);
-    glVertex2d(90, 328);
-    glVertex2d(125, 328);
-    glVertex2d(125, 300);
-    glVertex2d(90, 300);
+    glVertex2d(240, 260);
+    glVertex2d(380, 260);
+    glVertex2d(380, 250);
+    glVertex2d(240, 250);
     glEnd();
 
-    glColor3ub(111, 119, 45);
+    //-------------------------------------------MOSQUE---------------------------------------
+    glColor3ub(128, 0, 0);
     glBegin(GL_POLYGON);
-    glVertex2d(126, 328);
-    glVertex2d(139, 328);
-    glVertex2d(139, 300);
-    glVertex2d(126, 300);
+    glVertex2d(410, 255);
+    glVertex2d(470, 255);
+    glVertex2d(470, 250);
+    glVertex2d(410, 250);
     glEnd();
 
-    glColor3ub(111, 119, 45);
+    glColor3ub(172, 172, 145);
     glBegin(GL_POLYGON);
-    glVertex2d(141, 327);
-    glVertex2d(149, 332);
-    glVertex2d(149, 306);
-    glVertex2d(141, 300);
+    glVertex2d(415, 255);
+    glVertex2d(390, 300);
+    glVertex2d(485, 300);
+    glVertex2d(465, 255);
     glEnd();
 
-    //----------------------------------1st flor--------------
-    glColor3ub(111, 119, 45);
+    glColor3ub(93, 93, 70);
     glBegin(GL_POLYGON);
-    glVertex2d(90, 298);
-    glVertex2d(125, 298);
-    glVertex2d(125, 278);
-    glVertex2d(90, 278);
+    glVertex2d(385, 300);
+    glVertex2d(385, 310);
+    glVertex2d(490, 310);
+    glVertex2d(490, 300);
     glEnd();
 
-    glColor3ub(111, 119, 45);
+    glColor3ub(0, 0, 0);
+    glLineWidth(2);
+    glBegin(GL_LINES);
+    glVertex2d(385, 300);
+    glVertex2d(385, 310);
+
+    glBegin(GL_LINES);
+    glVertex2d(385, 310);
+    glVertex2d(490, 310);
+
+    glBegin(GL_LINES);
+    glVertex2d(490, 310);
+    glVertex2d(490, 300);
+
+    glBegin(GL_LINES);
+    glVertex2d(490, 300);
+    glVertex2d(385, 300);
+
+    glEnd();
+
+    glColor3ub(0, 0, 0);
     glBegin(GL_POLYGON);
-    glVertex2d(126, 298);
-    glVertex2d(139, 298);
-    glVertex2d(139, 278);
-    glVertex2d(126, 278);
+    glVertex2d(420, 295);
+    glVertex2d(460, 295);
+    glVertex2d(460, 290);
+    glVertex2d(420, 290);
     glEnd();
 
-    glColor3ub(111, 119, 45);
+    glColor3ub(77, 0, 0);
     glBegin(GL_POLYGON);
-    glVertex2d(141, 297);
-    glVertex2d(149, 303);
-    glVertex2d(149, 282);
-    glVertex2d(141, 278);
+    glVertex2d(420, 285);
+    glVertex2d(460, 285);
+    glVertex2d(460, 255);
+    glVertex2d(420, 255);
     glEnd();
 
-    //---------------------------main body=-----------------------------------------------
-    glColor3ub(240, 240, 240);
+
+    glColor3ub(255, 255, 255);
     glBegin(GL_POLYGON);
-    glVertex2d(150, 365);
-    glVertex2d(300, 365);
-    glVertex2d(300, 280);
-    glVertex2d(150, 280);
+    glVertex2d(430, 275);
+    glVertex2d(450, 275);
+    glVertex2d(450, 255);
+    glVertex2d(430, 255);
     glEnd();
 
-    glColor3ub(111, 119, 45);
+
+    glColor3ub(0, 61, 102);
     glBegin(GL_POLYGON);
-    glVertex2d(150, 358);
-    glVertex2d(169, 358);
-    glVertex2d(169, 334);
-    glVertex2d(150, 334);
+    glVertex2d(435, 265);
+    glVertex2d(445, 265);
+    glVertex2d(445, 255);
+    glVertex2d(435, 255);
     glEnd();
 
-    glColor3ub(111, 119, 45);
-    glBegin(GL_POLYGON);
-    glVertex2d(150, 332);
-    glVertex2d(169, 332);
-    glVertex2d(169, 306);
-    glVertex2d(150, 306);
-    glEnd();
-
-    glColor3ub(111, 119, 45);
-    glBegin(GL_POLYGON);
-    glVertex2d(150, 304);
-    glVertex2d(169, 304);
-    glVertex2d(169, 282);
-    glVertex2d(150, 282);
-    glEnd();
-
-    ///--------------------------------------
-    glColor3ub(111, 119, 45);
-    glBegin(GL_POLYGON);
-    glVertex2d(170, 358);
-    glVertex2d(189, 358);
-    glVertex2d(189, 334);
-    glVertex2d(170, 334);
-    glEnd();
-
-    glColor3ub(111, 119, 45);
-    glBegin(GL_POLYGON);
-    glVertex2d(170, 332);
-    glVertex2d(189, 332);
-    glVertex2d(189, 306);
-    glVertex2d(170, 306);
-    glEnd();
-
-    glColor3ub(111, 119, 45);
-    glBegin(GL_POLYGON);
-    glVertex2d(170, 304);
-    glVertex2d(189, 304);
-    glVertex2d(189, 282);
-    glVertex2d(170, 282);
-    glEnd();
-
-    ////-----------main body right side-------------------------------
-    glColor3ub(111, 119, 45);
-    glBegin(GL_POLYGON);
-    glVertex2d(260, 358);
-    glVertex2d(279, 358);
-    glVertex2d(279, 334);
-    glVertex2d(260, 334);
-    glEnd();
-
-    glColor3ub(111, 119, 45);
-    glBegin(GL_POLYGON);
-    glVertex2d(260, 332);
-    glVertex2d(279, 332);
-    glVertex2d(279, 306);
-    glVertex2d(260, 306);
-    glEnd();
-
-    glColor3ub(111, 119, 45);
-    glBegin(GL_POLYGON);
-    glVertex2d(260, 304);
-    glVertex2d(279, 304);
-    glVertex2d(279, 282);
-    glVertex2d(260, 282);
-    glEnd();
-
-    ///--------------------------------------
-    glColor3ub(111, 119, 45);
-    glBegin(GL_POLYGON);
-    glVertex2d(280, 358);
-    glVertex2d(299, 358);
-    glVertex2d(299, 334);
-    glVertex2d(280, 334);
-    glEnd();
-
-    glColor3ub(111, 119, 45);
-    glBegin(GL_POLYGON);
-    glVertex2d(280, 332);
-    glVertex2d(299, 332);
-    glVertex2d(299, 306);
-    glVertex2d(280, 306);
-    glEnd();
-
-    glColor3ub(111, 119, 45);
-    glBegin(GL_POLYGON);
-    glVertex2d(280, 304);
-    glVertex2d(299, 304);
-    glVertex2d(299, 282);
-    glVertex2d(280, 282);
-    glEnd();
-
-    //----------------main body middle part------------------------------------------------
-    glColor3ub(100, 25, 5);
-    glBegin(GL_POLYGON);
-    glVertex2d(190, 358);
-    glVertex2d(259, 358);
-    glVertex2d(259, 282);
-    glVertex2d(190, 282);
-    glEnd();
-
-    glColor3ub(100, 100, 100);
-    glBegin(GL_POLYGON);
-    glVertex2d(192, 356);
-    glVertex2d(202, 356);
-    glVertex2d(202, 334);
-    glVertex2d(192, 334);
-    glEnd();
-
-    glColor3ub(100, 100, 100);
-    glBegin(GL_POLYGON);
-    glVertex2d(206, 356);
-    glVertex2d(216, 356);
-    glVertex2d(216, 334);
-    glVertex2d(206, 334);
-    glEnd();
-
-    glColor3ub(100, 100, 100);
-    glBegin(GL_POLYGON);
-    glVertex2d(220, 356);
-    glVertex2d(230, 356);
-    glVertex2d(230, 334);
-    glVertex2d(220, 334);
-    glEnd();
-
-    glColor3ub(100, 100, 100);
-    glBegin(GL_POLYGON);
-    glVertex2d(234, 356);
-    glVertex2d(244, 356);
-    glVertex2d(244, 334);
-    glVertex2d(234, 334);
-    glEnd();
-
-    glColor3ub(100, 100, 100);
-    glBegin(GL_POLYGON);
-    glVertex2d(236, 356);
-    glVertex2d(244, 356);
-    glVertex2d(244, 334);
-    glVertex2d(236, 334);
-    glEnd();
-
-    glColor3ub(100, 100, 100);
-    glBegin(GL_POLYGON);
-    glVertex2d(248, 356);
-    glVertex2d(258, 356);
-    glVertex2d(258, 334);
-    glVertex2d(248, 334);
-    glEnd();
-
-    //---------------------------------------tree----------------------------------------
-    // trees();
-    trees(1, 2);
-    trees(1, 2);
-    trees(1, 2);
-    trees(1, 2);
-    trees(-40, -40);
-    trees(-45, -50);
-    trees(-50, -60);
+    glColor3ub(0, 61, 102);
+    glBegin(GL_TRIANGLES);
+    glVertex2d(435, 265);
+    glVertex2d(440, 270);
+    glVertex2d(445, 265);
     
-    trees(-65, -100);
-    trees(-68, -115);
-    trees(-74, -120);
-    trees(-78, -130);
-    trees(-85, -145);
-  
-    trees(20, 2);
-    trees(40, 2);
-    trees(60, 2);
-    trees(80, 2);
-    trees(100, 2);
-    trees(120, 2);
-    trees(140, 2);
-    trees(160, 2);
-    trees(180, 2);
-    trees(200, 2);
-    trees(220, 2);
-    trees(240, 2);
-    trees(260, 2);
-    trees(280, 2);
-    trees(300, 2);
-    trees(320, 2);
-    trees(340, 2);
-    trees(360, 2);
-    trees(380, 2);
-    trees(390, -50);
-    trees(390, -20);
-    trees(390, -10);
-    trees(390, -40);
-    trees(390, -60);
-    trees(390, -80);
-    trees(390, -100);
-    trees(390, -120);
-    trees(390, -140);
-    trees(390, -150);
-    trees(390, -160);
     glEnd();
+    //---------------------------------------tree----------------------------------------
+
+    trees(1, 2);
 
     // --------------------------------------ROAD------------------------------------------
     glColor3ub(255, 255, 205);
@@ -703,7 +1222,7 @@ int main(int argc, char **argv)
     myInit();
 
     glutDisplayFunc(display);
-    glutTimerFunc(50, update, 0);
+    // glutTimerFunc(50, update, 0);
     // update(0);
 
     glutMainLoop();
