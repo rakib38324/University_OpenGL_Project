@@ -1433,7 +1433,6 @@ void display()
     glBegin(GL_LINES);
     glVertex2d(60, 320);
     glVertex2d(60, 300);
-    glEnd();
 
     //-----------------------------lab end--------------------------------------------------------
 
@@ -1467,7 +1466,7 @@ void display()
 
     bigTree(360, 265); // MOSQUE SIDE
     bigTree(380, 250); // MOSQUE SIDE
-
+    
     bigTree(460, 250);
     bigTree(40, 220);
     bigTree(-5, 220);
@@ -1532,7 +1531,6 @@ void display()
     glBegin(GL_LINES);
     glVertex2d(50, 210);
     glVertex2d(0, 110);
-    glEnd();
 
     glColor3ub(255, 255, 205);
     glBegin(GL_POLYGON);
