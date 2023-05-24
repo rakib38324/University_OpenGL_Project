@@ -7,7 +7,7 @@
 #include <iostream>
 using namespace std;
 
-int x = 1, y = 2;
+int x = 1, y = 2, busx = 1, busy = 1, bus1x = 1, bus1y = 1, sunx = 1, suny = 1, planex = 1, planey = 1, cloud1x = 1, cloud1y = 1, cloud2x = 1, cloud2y = 1, cloud3x = 1, cloud3y = 1, moonx = 0, moony = 0;
 
 void myInit()
 {
@@ -49,8 +49,6 @@ void cloud(int h, int k, int rx, int ry, int R, int G, int B) // Works
         glVertex2f(h + rx * cos(3.14159 * i / 180), k + ry * sin(3.14159 * i / 180)); // main point + radius
     }                                                                                 // 3.14159*i/180   convert degree to radian
     glEnd();
-
-    // glFlush();
 }
 
 void circle(float x, float y, float rd, int r, int g, int b)
@@ -282,21 +280,74 @@ void bigTree(int x, int y)
     glEnd();
 }
 
+void plane(int planex, int planey)
+{
+
+    glColor3ub(40, 120, 33);
+    glBegin(GL_POLYGON);
+    glVertex2d(planex + 150, planey + 255);
+    glVertex2d(planex + 180, planey + 245);
+    glVertex2d(planex + 180, planey + 235);
+    glVertex2d(planex + 150, planey + 235);
+    glEnd();
+
+    glColor3ub(40, 120, 33);
+    glBegin(GL_TRIANGLES);
+    glVertex2d(planex + 150, planey + 255);
+    glVertex2d(planex + 150, planey + 235);
+    glVertex2d(planex + 140, planey + 235);
+    glEnd();
+
+    glColor3ub(255, 255, 50);
+    glBegin(GL_TRIANGLES);
+    glVertex2d(planex + 150, planey + 255);
+    glVertex2d(planex + 150, planey + 242);
+    glVertex2d(planex + 143, planey + 242);
+    glEnd();
+
+    glColor3ub(40, 120, 33);
+    glBegin(GL_TRIANGLES);
+    glVertex2d(planex + 185, planey + 255);
+    glVertex2d(planex + 185, planey + 235);
+    glVertex2d(planex + 175, planey + 235);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glVertex2d(planex + 185, planey + 255);
+    glVertex2d(planex + 190, planey + 255);
+    glVertex2d(planex + 185, planey + 250);
+    glEnd();
+
+    glBegin(GL_TRIANGLES);
+    glVertex2d(planex + 185, planey + 242);
+    glVertex2d(planex + 192, planey + 240);
+    glVertex2d(planex + 185, planey + 238);
+    glEnd();
+
+    glColor3ub(255, 255, 255);
+    glLineWidth(0.5);
+    glBegin(GL_LINES);
+    glVertex2d(planex + 185, planey + 240);
+    glVertex2d(planex + 143, planey + 240);
+    glEnd();
+}
+
 void display()
 {
 
     glClear(GL_COLOR_BUFFER_BIT);
 
     glBegin(GL_QUADS);
-    glColor3ub(221, 236, 243);
+    glColor3ub(211, 250, 250); // color
     glVertex2d(0, 250);
-    glVertex2f(500, 250);
+    glVertex2d(500, 250);
 
-    glColor3ub(121, 192, 216);
-    glVertex2f(500, 500);
-
-    glVertex2f(0, 500);
+    glColor3ub(120, 169, 255);
+    glVertex2d(500, 500);
+    glVertex2d(0, 500);
     glEnd();
+
+    cloud(sunx + 100, suny + 450, 12, 20, 255, 255, 170); // sun
 
     //--------------------------------------field-----------------------
     glColor3ub(43, 120, 33);
@@ -1508,21 +1559,21 @@ void display()
 
     //---------------------------CLOUD---------------------------------------
 
-    cloud(x + 100, y + 400, 12, 20, 255, 255, 102); // sun
+    plane(planex + 300, planey + 200);
 
-    cloud(x + 50, y + 400, 20, 15, 255, 255, 255);
-    cloud(x + 58, y + 415, 20, 15, 255, 255, 255);
-    cloud(x + 65, y + 398, 20, 15, 255, 255, 255);
+    cloud(cloud1x + 50, cloud1y + 400, 20, 15, 255, 255, 255);
+    cloud(cloud1x + 58, cloud1y + 415, 20, 15, 255, 255, 255);
+    cloud(cloud1x + 65, cloud1y + 398, 20, 15, 255, 255, 255);
 
-    cloud(x + 250, y + 430, 20, 15, 255, 255, 255);
-    cloud(x + 258, y + 455, 20, 15, 255, 255, 255);
-    cloud(x + 265, y + 428, 20, 15, 255, 255, 255);
-    cloud(x + 275, y + 445, 20, 15, 255, 255, 255);
-    cloud(x + 235, y + 445, 20, 15, 255, 255, 255);
+    cloud(cloud2x + 250, cloud2y + 430, 20, 15, 255, 255, 255);
+    cloud(cloud2x + 258, cloud2y + 455, 20, 15, 255, 255, 255);
+    cloud(cloud2x + 265, cloud2y + 428, 20, 15, 255, 255, 255);
+    cloud(cloud2x + 275, cloud2y + 445, 20, 15, 255, 255, 255);
+    cloud(cloud2x + 235, cloud2y + 445, 20, 15, 255, 255, 255);
 
-    cloud(x + 450, y + 400, 20, 15, 255, 255, 255);
-    cloud(x + 458, y + 415, 20, 15, 255, 255, 255);
-    cloud(x + 465, y + 398, 20, 15, 255, 255, 255);
+    cloud(cloud3x + 450, cloud3y + 400, 20, 15, 255, 255, 255);
+    cloud(cloud3x + 458, cloud3y + 415, 20, 15, 255, 255, 255);
+    cloud(cloud3x + 465, cloud3y + 398, 20, 15, 255, 255, 255);
 
     glColor3ub(255, 255, 255);
     glBegin(GL_LINES);
@@ -1542,14 +1593,11 @@ void display()
     glVertex2d(0, 0);
     glEnd();
 
-    x++;
+    bus(busx + 5, busy + 5);     //---------------bus call---------------------
+    bus(bus1x + 300, bus1y + 5); //---------------bus call---------------------
 
-    if (x == 400)
-    {
-        x = 10;
-    }
-
-    bus(5, 5); //---------------bus call---------------------
+    // cloud(sunx + 100, suny + 450, 12, 20, 255, 255, 170);  // sun
+    // cloud(moonx + 80, moony + 200, 12, 20, 255, 255, 255); // moon
 
     glFlush();
 }
@@ -1557,8 +1605,102 @@ void update(int val)
 {
 
     glutPostRedisplay();
-    glutTimerFunc(50, update, 0);
+    glutTimerFunc(3000, update, 0);
 }
+void sunUpdate1(int val)
+{
+    sunx++;
+
+    if (sunx == 300)
+    {
+        sunx--;
+        suny--;
+    }
+    if (suny == -300)
+    {
+
+        sunx = -80;
+        suny = -300;
+    }
+
+    // if (sunx == -80)
+    // {
+    //     moony++;
+    //     if (moony == 250)
+    //     {
+    //         moony--;
+    //         moonx++;
+    //     }
+    // }
+
+    glutPostRedisplay();
+    glutTimerFunc(300, sunUpdate1, 0);
+}
+
+void planeUpdate(int val)
+{
+    planex--;
+    if (planex == -470)
+    {
+        planex = 160;
+    }
+
+    glutPostRedisplay();
+    glutTimerFunc(50, planeUpdate, 0);
+}
+
+void cloudUpdate(int val)
+{
+
+    cloud1x++;
+    cloud2x++;
+    cloud3x++;
+
+    if (cloud1x == 470)
+    {
+        cloud1x = -80;
+    }
+
+    if (cloud2x == 300)
+    {
+        cloud2x = -290;
+    }
+
+    if (cloud3x == 100)
+    {
+        cloud3x = -520;
+    }
+
+    glutPostRedisplay();
+    glutTimerFunc(200, cloudUpdate, 0);
+}
+void busUpdate(int val)
+{
+
+    busx--;
+    if (busx == -200)
+    {
+        busx = 450;
+    }
+
+    glutPostRedisplay();
+    glutTimerFunc(30, busUpdate, 0);
+}
+
+void busUpdate1(int val)
+{
+
+    bus1x--;
+
+    if (bus1x == -500)
+    {
+        bus1x = 90;
+    }
+
+    glutPostRedisplay();
+    glutTimerFunc(20, busUpdate1, 0);
+}
+
 int main(int argc, char **argv)
 {
     glutInit(&argc, argv);
@@ -1574,6 +1716,22 @@ int main(int argc, char **argv)
 
     glutDisplayFunc(display);
     glutTimerFunc(500, update, 0);
+
+    glutDisplayFunc(display);
+    glutTimerFunc(500, sunUpdate1, 0);
+
+    glutDisplayFunc(display);
+    glutTimerFunc(500, planeUpdate, 0);
+
+    glutDisplayFunc(display);
+    glutTimerFunc(500, cloudUpdate, 0);
+
+    glutDisplayFunc(display);
+    glutTimerFunc(500, busUpdate, 0);
+
+    glutDisplayFunc(display);
+    glutTimerFunc(500, busUpdate1, 0);
+
     // update(0);
 
     glutMainLoop();
