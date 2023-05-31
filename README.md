@@ -1,8 +1,11 @@
 # University_OpenGL_Project
 
-##Output:
+## Output:
+Image
 ![image](https://github.com/rakib38324/University_OpenGL_Project/assets/108406603/2e359c01-cefe-4f23-889a-c9030615ffaf)
 
+video
+https://drive.google.com/file/d/1gs4wUzbeKDZO9p3qxMDkNv19ERPT_8ed/view?usp=sharing
 1. Introduction   
 The goal of this project is to create a virtual university campus-like scenario using the OpenGL API (Open Graphics Library). The project involves developing a 2D environment showing various elements of a university campus, including university buildings, playgrounds, trees, sky, two buses, an airplane, a mosque, and the sun.   
 2. Objectives   
