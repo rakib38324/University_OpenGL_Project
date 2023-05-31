@@ -347,6 +347,23 @@ void display()
     glVertex2d(0, 500);
     glEnd();
 
+    if (suny < -200)
+    {
+
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        glBegin(GL_QUADS);
+
+        glColor3ub(77, 77, 77);
+        glVertex2d(0, 250);
+        glVertex2d(500, 250);
+
+        glColor3ub(0, 0, 0); // color
+        glVertex2d(500, 500);
+        glVertex2d(0, 500);
+        glEnd();
+    }
+
     cloud(sunx + 100, suny + 450, 12, 20, 255, 255, 170); // sun
 
     //--------------------------------------field-----------------------
@@ -1596,8 +1613,6 @@ void display()
     bus(busx + 5, busy + 5);     //---------------bus call---------------------
     bus(bus1x + 300, bus1y + 5); //---------------bus call---------------------
 
-    // cloud(sunx + 100, suny + 450, 12, 20, 255, 255, 170);  // sun
-    // cloud(moonx + 80, moony + 200, 12, 20, 255, 255, 255); // moon
 
     glFlush();
 }
@@ -1620,21 +1635,12 @@ void sunUpdate1(int val)
     {
 
         sunx = -80;
-        suny = -300;
+        suny = -0;
+        sunx++;
     }
 
-    // if (sunx == -80)
-    // {
-    //     moony++;
-    //     if (moony == 250)
-    //     {
-    //         moony--;
-    //         moonx++;
-    //     }
-    // }
-
     glutPostRedisplay();
-    glutTimerFunc(300, sunUpdate1, 0);
+    glutTimerFunc(100, sunUpdate1, 0);
 }
 
 void planeUpdate(int val)
@@ -1672,7 +1678,7 @@ void cloudUpdate(int val)
     }
 
     glutPostRedisplay();
-    glutTimerFunc(200, cloudUpdate, 0);
+    glutTimerFunc(80, cloudUpdate, 0);
 }
 void busUpdate(int val)
 {
@@ -1707,8 +1713,8 @@ int main(int argc, char **argv)
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 
     // giving window size in X- and Y- direction
-    glutInitWindowSize(1500, 800);
-    glutInitWindowPosition(50, 0);
+    glutInitWindowSize(1500, 700);
+    glutInitWindowPosition(0, 0);
 
     // Giving name to window
     glutCreateWindow("Aminul_202-15-3832_Projects");
@@ -1717,19 +1723,14 @@ int main(int argc, char **argv)
     glutDisplayFunc(display);
     glutTimerFunc(500, update, 0);
 
-    glutDisplayFunc(display);
     glutTimerFunc(500, sunUpdate1, 0);
 
-    glutDisplayFunc(display);
     glutTimerFunc(500, planeUpdate, 0);
 
-    glutDisplayFunc(display);
     glutTimerFunc(500, cloudUpdate, 0);
 
-    glutDisplayFunc(display);
     glutTimerFunc(500, busUpdate, 0);
 
-    glutDisplayFunc(display);
     glutTimerFunc(500, busUpdate1, 0);
 
     // update(0);
